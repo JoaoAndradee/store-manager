@@ -1,7 +1,17 @@
-// Inicio do projeto
 const express = require('express');
+// Meu código
+const { productRouter } = require('./routers');
+//
+
+// Inicio do projeto
 
 const app = express();
+
+// Meu código
+app.use(express.json());
+
+app.use('/products', productRouter);
+//
 
 // não remova esse endpoint, é para o avaliador funcionar
 app.get('/', (_request, response) => {
