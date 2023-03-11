@@ -60,10 +60,28 @@ const validateIdSale = async (obj) => {
   const lastIdProducts = getAllProducts.pop().id;
   const highestId = obj
     .reduce((prev, current) => ((prev.productId > current.productId) ? prev : current)).productId;
-  console.log('id alto', highestId);
-  console.log('lastIdProducts', lastIdProducts);
+  // console.log('id alto', highestId);
+  // console.log('lastIdProducts', lastIdProducts);
   if (highestId > lastIdProducts) {
-    console.log('entrou no if');
+    // console.log('entrou no if');
+    return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  }
+  return { type: null, message: '' };
+};
+
+const validateIdSaleGet = async (sales) => {
+  if (sales.length === 0) {
+    return { type: 'PRODUCT_NOT_FOUND', message: 'Sale not found' };
+  }
+  return { type: null, message: '' };
+};
+
+const validateIdProductsUpdate = async (name, id) => {
+  const existingProduct = await productModel.update(name, id);
+  // console.log('existingProduct: ', existingProduct);
+  // console.log(existingProduct.affectedRows);
+  if (existingProduct.affectedRows === 0) {
+    // console.log('entrou no if');
     return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
   }
   return { type: null, message: '' };
@@ -74,4 +92,6 @@ module.exports = {
   validateName,
   validateSale,
   validateIdSale,
+  validateIdSaleGet,
+  validateIdProductsUpdate,
 };

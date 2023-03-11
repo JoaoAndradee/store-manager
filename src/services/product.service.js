@@ -28,8 +28,17 @@ const createProduct = async (name) => {
   return { type: null, message: newProduct };
 };
 
+const updateProduct = async (name, id) => {
+  const error = await schema.validateName(name);
+  if (error.type) return error;
+  const errorId = await schema.validateIdProductsUpdate(name, id);
+  if (errorId.type) return errorId;
+  return { type: null, message: '' };
+};
+
 module.exports = {
   getAll,
   getById,
   createProduct,
+  updateProduct,
 };

@@ -22,12 +22,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-05T00:14:01.316Z",
-    "modified": "2023-03-07T05:24:03.881Z",
+    "modified": "2023-03-11T19:43:37.194Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"é o que\"\n}",
+      "raw": "{\n  \n}",
       "form": []
     },
     "tests": []
@@ -47,6 +47,119 @@
     "body": {
       "type": "json",
       "raw": "[\n  {\n    \"quantity\": 3\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c2bc3e48-f272-448c-b6fc-f1337da84daf",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-10T17:59:12.529Z",
+    "modified": "2023-03-10T17:59:12.529Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "1873e307-3170-4fcd-b98a-ab3cec5d027a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/3",
+    "url": "http://localhost:3000/sales/3",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-10T19:13:00.432Z",
+    "modified": "2023-03-10T19:13:00.432Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c5956dfd-0c03-4afb-8576-684d51cef3ee",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/2",
+    "url": "http://localhost:3000/sales/2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-10T19:13:09.739Z",
+    "modified": "2023-03-10T19:13:09.739Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "534c6f6f-e410-4d2b-8aca-6719f2db8b18",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/4",
+    "url": "http://localhost:3000/sales/4",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-10T19:25:48.880Z",
+    "modified": "2023-03-10T19:25:48.880Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2988f3a9-7edb-4d02-8f59-8d5b948509d5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/3",
+    "url": "http://localhost:3000/products/3",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-03-11T16:39:45.370Z",
+    "modified": "2023-03-11T16:39:45.370Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n  \"name\": \"Martelo do Batman\"\r\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "616a7b55-d3ff-4c00-aad1-1c0ceb143916",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/4",
+    "url": "http://localhost:3000/products/4",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-03-11T16:43:51.815Z",
+    "modified": "2023-03-11T19:43:03.110Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"As mil e uma tranças do careca\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "16a10053-e498-49ed-9569-f4aa5a6a71b6",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/3",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-03-11T16:44:35.475Z",
+    "modified": "2023-03-11T20:00:11.910Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"Machado do Thor Stormbreaker\"\n}",
       "form": []
     },
     "tests": []
