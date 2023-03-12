@@ -53,10 +53,23 @@ const deleteProduct = async (req, res) => {
   res.status(204).json();
 };
 
+const searchProduct = async (req, res) => {
+  const searchTerm = req.query.q;
+
+  console.log('chegou aki');
+
+  const { type, message } = await productService.searchProduct(searchTerm);
+
+  if (type) return res.status(type).json(message);
+
+  res.status(200).json(message);
+};
+
 module.exports = {
   getAll,
   getById,
   createProduct,
   updateProduct,
   deleteProduct,
+  searchProduct,
 };

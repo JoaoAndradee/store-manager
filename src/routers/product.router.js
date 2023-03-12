@@ -9,6 +9,11 @@ router.get(
 );
 
 router.get(
+  '/search',
+  productController.searchProduct,
+);
+
+router.get(
   '/:id',
   productController.getById,
 );

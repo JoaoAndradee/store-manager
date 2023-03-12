@@ -103,7 +103,7 @@ const validateIdSales = async (saleId) => {
   return { type: null, message: '' };
 };
 
-const validateUpdateSales = async (id, salesArr) => {
+const validateUpdateSales = async (id) => {
   const count = await salesModel.countSalesById(id);
   if (count === 0) return { type: 'PRODUCT_NOT_FOUND', message: 'Sale not found' };
   return { type: null, message: '' };

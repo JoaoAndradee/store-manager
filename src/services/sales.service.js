@@ -36,7 +36,7 @@ const updateSales = async (id, salesArr) => {
   if (error.type) return error;
   const error2 = await schema.validateIdSale(salesArr);
   if (error2.type) return error2;
-  const error3 = await schema.validateUpdateSales(id, salesArr);
+  const error3 = await schema.validateUpdateSales(id);
   if (error3.type) return error3;
   const updating = salesArr.map((sale) => salesModel.update(id, sale.productId, sale.quantity));
   await Promise.all(updating);
