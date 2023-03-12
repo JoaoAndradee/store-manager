@@ -36,9 +36,16 @@ const updateProduct = async (name, id) => {
   return { type: null, message: '' };
 };
 
+const deleteProductById = async (id) => {
+  const error = await schema.validateIdProducts(id);
+  if (error.type) return error;
+  return { type: null };
+};
+
 module.exports = {
   getAll,
   getById,
   createProduct,
   updateProduct,
+  deleteProductById,
 };

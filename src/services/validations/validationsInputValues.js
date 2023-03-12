@@ -5,7 +5,7 @@ const {
   addSalesSchema,
 } = require('./schemas');
 
-const { productModel } = require('../../models');
+const { productModel, salesModel } = require('../../models');
 
 const validateId = (id) => {
   const { error } = idSchema.validate(id);
@@ -87,6 +87,28 @@ const validateIdProductsUpdate = async (name, id) => {
   return { type: null, message: '' };
 };
 
+const validateIdProducts = async (productId) => {
+  const affectedRows = await productModel.del(productId);
+  if (affectedRows === 0) {
+    return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  }
+  return { type: null, message: '' };
+};
+
+const validateIdSales = async (saleId) => {
+  const affectedRows = await salesModel.deleteId(saleId);
+  if (affectedRows === 0) {
+    return { type: 'PRODUCT_NOT_FOUND', message: 'Sale not found' };
+  }
+  return { type: null, message: '' };
+};
+
+const validateUpdateSales = async (id, salesArr) => {
+  const count = await salesModel.countSalesById(id);
+  if (count === 0) return { type: 'PRODUCT_NOT_FOUND', message: 'Sale not found' };
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateId,
   validateName,
@@ -94,4 +116,7 @@ module.exports = {
   validateIdSale,
   validateIdSaleGet,
   validateIdProductsUpdate,
+  validateIdProducts,
+  validateIdSales,
+  validateUpdateSales,
 };

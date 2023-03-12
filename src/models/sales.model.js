@@ -52,9 +52,46 @@ const readId = async (id) => {
   return camelize(result);
 };
 
+const deleteId = async (id) => {
+  const [{ affectedRows }] = await connection.execute(
+    'DELETE FROM StoreManager.sales_products WHERE sale_id = ?',
+    [id],
+  );
+  return affectedRows;
+};
+
+const update = async (saleId, productId, quantity) => {
+  const [result] = await connection.execute(
+    `UPDATE StoreManager.sales_products
+    SET product_id = ?, quantity = ?
+    WHERE sale_id = ? AND product_id = ?`,
+    [productId, quantity, saleId, productId],
+  );
+  return result;
+};
+
+const getAll = async () => {
+  const [result] = connection.execute(
+    'SELECT * FROM StoreManager.sales_products',
+  );
+  return result;
+};
+
+const countSalesById = async (id) => {
+  const [result] = await connection.execute(
+    'SELECT COUNT(*) as count FROM StoreManager.sales_products WHERE sale_id = ?',
+    [id],
+  );
+  return result[0].count;
+};
+
 module.exports = {
   createSale,
   insert,
   read,
   readId,
+  deleteId,
+  update,
+  getAll,
+  countSalesById,
 };
