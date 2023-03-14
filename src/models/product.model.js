@@ -4,7 +4,6 @@ const getAll = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM StoreManager.products ORDER BY id',
   );
-  // console.log(result.pop().id);
   return result;
 };
 
@@ -21,7 +20,6 @@ const insert = async (name) => {
     'INSERT INTO StoreManager.products (name) VALUES (?)',
     [name],
   );
-  // console.log(result);
   return result;
 };
 

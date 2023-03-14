@@ -39,7 +39,7 @@ const updateProduct = async (name, id) => {
 const deleteProductById = async (id) => {
   const error = await schema.validateIdProducts(id);
   if (error.type) return error;
-  return { type: null };
+  return { type: null, message: '' };
 };
 
 const searchProduct = async (searchTerm) => {
